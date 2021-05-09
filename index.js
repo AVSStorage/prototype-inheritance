@@ -46,3 +46,37 @@ Hamburger.prototype.calculatePrice = function () {
 Hamburger.prototype.calculateCalories = function () {
     return this.size.calories + this.stuffing.calories
 }
+
+
+/**
+* Класс, объекты которого описывают параметры салата. 
+* 
+* @constructor
+* @param size        Размер
+* @param stuffing    Начинка
+*/
+function Salad(name, grams) { 
+    this.name = name
+    this.grams = grams
+ } 
+
+ /* Виды салатов */
+Salad.RUSSIAN_SALAD = { cost: 100, calories: 20 }
+Salad.CAESAR = { cost: 50, calories: 80 }
+
+
+/**
+ * Узнать цену салатов
+ * @return {Number} Цена в тугриках
+ */
+Hamburger.prototype.calculatePrice = function () {
+    return this.name.cost * this.grams
+}
+
+/**
+ * Узнать калорийность салатов
+ * @return {Number} Калорийность в калориях
+ */
+Hamburger.prototype.calculateCalories = function () {
+    return this.name.calories + this.grams
+}
